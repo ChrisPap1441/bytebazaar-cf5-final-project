@@ -1,0 +1,16 @@
+@media (min-width: 1199px  ) {
+  .sm\:hidden {
+    display: none;
+  }
+  .sm\:flex {
+    display: flex;
+  }
+}
+  @media (max-width: 1199px) {
+    .sm\:hidden {
+      display: flex;
+    }
+    .sm\:flex {
+      display: none;
+    }
+  }

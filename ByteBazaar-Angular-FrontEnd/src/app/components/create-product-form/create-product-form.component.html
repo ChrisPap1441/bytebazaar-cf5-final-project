@@ -1,0 +1,56 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="w-[27rem] p-6 rounded-lg shadow-md" color="primary">
+    <div class="mb-4">
+        <mat-form-field class="w-full">
+            <mat-label>Title</mat-label>
+            <input matInput required placeholder="Title.." value="" type="text" name="title" formControlName="title" class="py-2 px-3 mt-1 focus:shadow-outline">
+            <mat-error *ngIf="productForm.get('title').hasError('required')"> Title is required </mat-error>
+            <mat-error *ngIf="productForm.get('title').hasError('minlength')">Title must be at least 3 characters long</mat-error>
+            <mat-error *ngIf="productForm.get('title').hasError('maxlength')">Title must be less than 26 characters</mat-error>
+          </mat-form-field>
+    </div>
+    <div class="mb-4">
+        <mat-form-field>
+            <mat-label>Category</mat-label>
+            <mat-select required formControlName="category" name="category" type="text">
+            <mat-option value="Desktop">Desktop</mat-option>
+            <mat-option value="Laptop">Laptop</mat-option>
+            <mat-option value="Monitor">Monitor</mat-option>
+            <mat-option value="Tablet">Tablet</mat-option>
+            <mat-option value="Smartphone">Smartphone</mat-option>
+            <mat-option value="Hardware">Hardware</mat-option>
+            </mat-select>
+            <mat-error *ngIf="productForm.get('category').hasError('required')"> Category is required </mat-error>
+            </mat-form-field>
+      </div>
+    <div class="mb-4">
+        <mat-form-field class="w-full">
+            <mat-label>Image</mat-label>
+            <input matInput required placeholder="Image url" value="" name="image" formControlName="image" class="py-2 px-3 mt-1 focus:shadow-outline">
+            <mat-error *ngIf="productForm.get('image').hasError('required')"> Image is required </mat-error>
+          </mat-form-field>
+    </div>
+    <div class="mb-4">
+        <mat-form-field class="w-full">
+            <mat-label>Description</mat-label>
+            <input matInput required placeholder="Description.." value="" name="description" formControlName="description" class="py-2 px-3 mt-1 focus:shadow-outline">
+            <mat-error *ngIf="productForm.get('description').hasError('required')"> Description is required </mat-error>
+            <mat-error *ngIf="productForm.get('description').hasError('maxlength')">Description must be less than 1001 characters</mat-error>
+          </mat-form-field>
+    </div>
+    <div class="mb-4">
+        <mat-form-field class="w-full">
+            <mat-label>Contact Info</mat-label>
+            <input matInput required placeholder="Contact Info" value="" name="contactInfo" formControlName="contactInfo" class="py-2 px-3 mt-1 focus:shadow-outline">
+            <mat-error *ngIf="productForm.get('contactInfo').hasError('required')"> Contact Info is required </mat-error>
+            <mat-error *ngIf="productForm.get('contactInfo').hasError('maxlength')">Contact Info must be less than 201 characters</mat-error>
+          </mat-form-field>
+    </div>
+    <div class="flex justify-between">
+        <button mat-raised-button color="primary" type="submit">
+            Create
+        </button>
+        <button (click)="onCancel()" mat-raised-button color="primary">
+            Cancel
+        </button>
+    </div>
+</form>

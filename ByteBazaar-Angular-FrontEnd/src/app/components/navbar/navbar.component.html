@@ -1,0 +1,41 @@
+<p>
+    <mat-toolbar class="flex items-center justify-between" color="primary">
+      <div>
+        <span>ByteBazaar</span>
+      </div>
+      <div class="flex gap-4 hidden sm:flex">
+        <button mat-button (click)="selectCategory('')">Home</button>
+        <button mat-button (click)="selectCategory('Desktop')">Desktop</button>
+        <button mat-button (click)="selectCategory('Laptop')">Laptop</button>
+        <button mat-button (click)="selectCategory('Monitor')">Monitor</button>
+        <button mat-button (click)="selectCategory('Tablet')">Tablet</button>
+        <button mat-button (click)="selectCategory('Smartphone')">Smartphone</button>
+        <button mat-button (click)="selectCategory('Hardware')">Hardware</button>
+        <button mat-button (click)="selectCategory('Favorites')">Favorites</button>
+        <button mat-button (click)="selectCategory('MyPosts')">My Posts</button>
+      </div>
+      <div class="flex items-center">
+        <div class="sm:hidden">
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="selectCategory('')">Home</button>
+            <button mat-menu-item (click)="selectCategory('Desktop')">Desktop</button>
+            <button mat-menu-item (click)="selectCategory('Laptop')">Laptop</button>
+            <button mat-menu-item (click)="selectCategory('Monitor')">Monitor</button>
+            <button mat-menu-item (click)="selectCategory('Tablet')">Tablet</button>
+            <button mat-menu-item (click)="selectCategory('Smartphone')">Smartphone</button>
+            <button mat-menu-item (click)="selectCategory('Hardware')">Hardware</button>
+            <button mat-menu-item  (click)="selectCategory('Favorites')">Favorites</button>
+            <button mat-menu-item  (click)="selectCategory('MyPosts')">My Posts</button>
+          </mat-menu>
+        </div>
+        <span>Welcome {{user.username}}!</span>
+     
+      <button mat-button (click)="handleLogOut()">
+        <svg class="text-white-600 w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z"/> <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /> <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
+      </button>
+      </div>
+    </mat-toolbar>
+  </p>
